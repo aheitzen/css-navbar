@@ -1,0 +1,50 @@
+html, body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+}
+
+ul {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	overflow-x: hidden;
+	position: absolute;
+	list-style-type: none;
+	padding: 0;
+}
+
+#slide-one {
+	background: blue;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+}
+
+#slide-two {
+	background-color: green;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	left: calc(100% - 10%);
+}
+
+#slide-three {
+	background-color: red;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	left: calc(100% - 5%);
+}
+
+#slide-two:hover {
+	margin-left: -10px;
+}
+
+#slide-three:hover {
+	margin-left: -10px;
+}
+
+p {
+	margin: 0;
+}
