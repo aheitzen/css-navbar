@@ -14,15 +14,25 @@ ul {
 	padding: 0;
 }
 
-#slide-one {
-	background: blue;
+#base {
+	background: white;
 	height: 100%;
 	width: 100%;
 	position: absolute;
 }
 
+#slide-one {
+	border: blue 2px solid;
+	background-color: white;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	left: calc(100% - 15%);
+}
+
 #slide-two {
-	background-color: green;
+	border: blue 2px solid;
+	background-color: white;
 	height: 100%;
 	width: 100%;
 	position: absolute;
@@ -30,11 +40,16 @@ ul {
 }
 
 #slide-three {
-	background-color: red;
+	border: blue 2px solid;
+	background-color: white;
 	height: 100%;
 	width: 100%;
 	position: absolute;
 	left: calc(100% - 5%);
+}
+
+#slide-one:hover {
+	margin-left: -10px;
 }
 
 #slide-two:hover {
@@ -45,6 +60,30 @@ ul {
 	margin-left: -10px;
 }
 
+h1 {
+	display: inline-block;
+    font-size: 24px;
+    color: blue;
+    transform: translateY(200%) translateX(-21px) rotate(-90deg);
+}
+
+h2 {
+	color: blue;
+	font-size: 10em;
+	margin-left: 1em;
+	margin-bottom: 0;
+}
+
 p {
-	margin: 0;
+	margin-left: 10em;
+	margin-right: 40em;
+	color: blue;
+
+}
+
+.center {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
