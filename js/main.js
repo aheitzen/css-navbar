@@ -97,29 +97,69 @@ $( document ).ready(function() {
 		}
 	});
 
-
-
-
-
-
-
-
-
-	
-	
-
-
-
 	$( "#slide-three" ).click(function() {
-		// console.log("CLICK", isSlideOneOpen);
-		if(!isSlideThreeOpen) {
-  			$(this).animate( { left: '-=60%' }, 1000, 'easeOutQuad' );
-  		}
-  		else {
-  			$(this).animate( { left: '+=60%'}, 1000, 'easeOutQuad' );
-  		}
-  		isSlideThreeOpen = !isSlideThreeOpen
+		var hasChildrenOpen = false
+  		//if slide 1 is closed
+  		if(isSlideOneOpen === false) {
+			toggleSlide($( "#slide-one"), isSlideOneOpen);
+			isSlideOneOpen = true
+		}
+		if(isSlideTwoOpen === false) {
+			toggleSlide($( "#slide-two"), isSlideTwoOpen);
+			isSlideTwoOpen = true
+		}
+		if(isSlideFourOpen === true) {
+			toggleSlide($( "#slide-four"), isSlideFourOpen);
+			isSlideFourOpen = false
+			hasChildrenOpen = true
+		}
+		if(isSlideFiveOpen === true) {
+			toggleSlide($( "#slide-five"), isSlideFiveOpen);
+			isSlideFiveOpen = false
+			hasChildrenOpen = true
+		}
+		if(isSlideSixOpen === true) {
+			toggleSlide($( "#slide-six"), isSlideSixOpen);
+			isSlideSixOpen = false
+			hasChildrenOpen = true
+		}
+		if(isSlideSevenOpen === true) {
+			toggleSlide($( "#slide-seven"), isSlideSevenOpen);
+			isSlideSevenOpen = false
+			hasChildrenOpen = true
+		}
+		//if children are open do not close this tab
+		if(hasChildrenOpen === false) {
+			toggleSlide($( "#slide-three" ), isSlideThreeOpen);
+			isSlideThreeOpen = !isSlideThreeOpen
+		}
 	});
+
+	// $( "#slide-three" ).click(function() {
+	// 	// console.log("CLICK", isSlideOneOpen);
+	// 	if(!isSlideThreeOpen) {
+ //  			$(this).animate( { left: '-=60%' }, 1000, 'easeOutQuad' );
+ //  		}
+ //  		else {
+ //  			$(this).animate( { left: '+=60%'}, 1000, 'easeOutQuad' );
+ //  		}
+ //  		isSlideThreeOpen = !isSlideThreeOpen
+	// });
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+	
 	$( "#slide-four" ).click(function() {
 		// console.log("CLICK", isSlideOneOpen);
 		if(!isSlideFourOpen) {
