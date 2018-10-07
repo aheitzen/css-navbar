@@ -6,27 +6,66 @@ var isSlideFiveOpen = false
 var isSlideSixOpen = false
 var isSlideSevenOpen = false
 
+function toggleSlide(slide, isSlideOpen) {
+		
+	if(isSlideOpen) {
+		//close slide
+		$(slide).animate( { left: '+=60%'}, 1000, 'easeOutQuad' );
+	}
+	else {
+		//open slide
+		$(slide).animate( { left: '-=60%' }, 1000, 'easeOutQuad' );
+  	}
+}
+
 $( document ).ready(function() {
 	$( "#slide-one" ).click(function() {
-		// console.log("CLICK", isSlideOneOpen);
-		if(!isSlideOneOpen) {
-  			$(this).animate( { left: '-=60%' }, 1000, 'easeOutQuad' );
-  		}
-  		else {
-  			$(this).animate( { left: '+=60%'}, 1000, 'easeOutQuad' );
-  		}
-  		isSlideOneOpen = !isSlideOneOpen
+		toggleSlide(this, isSlideOneOpen);
+		isSlideOneOpen = !isSlideOneOpen
+		if(isSlideTwoOpen === true) {
+			toggleSlide($( "#slide-two"), isSlideTwoOpen);
+			isSlideTwoOpen = false
+		}
+		if(isSlideThreeOpen === true) {
+			toggleSlide($( "#slide-three"), isSlideThreeOpen);
+			isSlideThreeOpen = false
+		}
+		if(isSlideFourOpen === true) {
+			toggleSlide($( "#slide-four"), isSlideFourOpen);
+			isSlideFourOpen = false
+		}
+		if(isSlideFiveOpen === true) {
+			toggleSlide($( "#slide-five"), isSlideFiveOpen);
+			isSlideFiveOpen = false
+		}
+		if(isSlideSixOpen === true) {
+			toggleSlide($( "#slide-six"), isSlideSixOpen);
+			isSlideSixOpen = false
+		}
+		if(isSlideSevenOpen === true) {
+			toggleSlide($( "#slide-seven"), isSlideSevenOpen);
+			isSlideSevenOpen = false
+		}
 	});
+	
+	
+
+
+
+
+
+
+
+
+
 	$( "#slide-two" ).click(function() {
-		// console.log("CLICK", isSlideOneOpen);
-		if(!isSlideTwoOpen) {
-  			$(this).animate( { left: '-=60%' }, 1000, 'easeOutQuad' );
-  		}
-  		else {
-  			$(this).animate( { left: '+=60%'}, 1000, 'easeOutQuad' );
-  		}
+		toggleSlide(this, isSlideTwoOpen);
   		isSlideTwoOpen = !isSlideTwoOpen
 	});
+	
+
+
+
 	$( "#slide-three" ).click(function() {
 		// console.log("CLICK", isSlideOneOpen);
 		if(!isSlideThreeOpen) {
