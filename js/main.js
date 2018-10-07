@@ -20,48 +20,92 @@ function toggleSlide(slide, isSlideOpen) {
 
 $( document ).ready(function() {
 	$( "#slide-one" ).click(function() {
-		toggleSlide(this, isSlideOneOpen);
-		isSlideOneOpen = !isSlideOneOpen
+		var hasChildrenOpen = false
 		if(isSlideTwoOpen === true) {
 			toggleSlide($( "#slide-two"), isSlideTwoOpen);
 			isSlideTwoOpen = false
+			hasChildrenOpen = true
 		}
 		if(isSlideThreeOpen === true) {
 			toggleSlide($( "#slide-three"), isSlideThreeOpen);
 			isSlideThreeOpen = false
+			hasChildrenOpen = true
 		}
 		if(isSlideFourOpen === true) {
 			toggleSlide($( "#slide-four"), isSlideFourOpen);
 			isSlideFourOpen = false
+			hasChildrenOpen = true
 		}
 		if(isSlideFiveOpen === true) {
 			toggleSlide($( "#slide-five"), isSlideFiveOpen);
 			isSlideFiveOpen = false
+			hasChildrenOpen = true
 		}
 		if(isSlideSixOpen === true) {
 			toggleSlide($( "#slide-six"), isSlideSixOpen);
 			isSlideSixOpen = false
+			hasChildrenOpen = true
 		}
 		if(isSlideSevenOpen === true) {
 			toggleSlide($( "#slide-seven"), isSlideSevenOpen);
 			isSlideSevenOpen = false
+			hasChildrenOpen = true
+		}
+		//if children are open do not close this tab
+		if(hasChildrenOpen === false) {
+			toggleSlide($( "#slide-one" ), isSlideOneOpen);
+			isSlideOneOpen = !isSlideOneOpen
 		}
 	});
 	
-	
-
-
-
-
-
-
-
-
-
 	$( "#slide-two" ).click(function() {
-		toggleSlide(this, isSlideTwoOpen);
-  		isSlideTwoOpen = !isSlideTwoOpen
+		var hasChildrenOpen = false
+  		//if slide 1 is closed
+  		if(isSlideOneOpen === false) {
+			toggleSlide($( "#slide-one"), isSlideOneOpen);
+			isSlideOneOpen = true
+		}
+		if(isSlideThreeOpen === true) {
+			toggleSlide($( "#slide-three"), isSlideThreeOpen);
+			isSlideThreeOpen = false
+			hasChildrenOpen = true
+		}
+		if(isSlideFourOpen === true) {
+			toggleSlide($( "#slide-four"), isSlideFourOpen);
+			isSlideFourOpen = false
+			hasChildrenOpen = true
+		}
+		if(isSlideFiveOpen === true) {
+			toggleSlide($( "#slide-five"), isSlideFiveOpen);
+			isSlideFiveOpen = false
+			hasChildrenOpen = true
+		}
+		if(isSlideSixOpen === true) {
+			toggleSlide($( "#slide-six"), isSlideSixOpen);
+			isSlideSixOpen = false
+			hasChildrenOpen = true
+		}
+		if(isSlideSevenOpen === true) {
+			toggleSlide($( "#slide-seven"), isSlideSevenOpen);
+			isSlideSevenOpen = false
+			hasChildrenOpen = true
+		}
+		//if children are open do not close this tab
+		if(hasChildrenOpen === false) {
+			toggleSlide($( "#slide-two" ), isSlideTwoOpen);
+			isSlideTwoOpen = !isSlideTwoOpen
+		}
 	});
+
+
+
+
+
+
+
+
+
+	
 	
 
 
